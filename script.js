@@ -8,11 +8,26 @@ pages.each(function(i) {
   }
 });
 
+function changeAudio(sourceUrl) {
+    var audio = $("#audioplayer");      
+    $("#audiosource").attr("src", sourceUrl + '.mp3');
+    /****************/
+    audio[0].pause();
+    audio[0].load();//suspends and restores all audio element
+
+    //audio[0].play(); changed based on Sprachprofi's comment below
+    audio[0].oncanplaythrough = audio[0].play();
+    /****************/
+}
+
 $(window).load(function() {
   
   $('.page').click(function() {
+	  
     var page = $(this);
     var page_num = pages.index(page) + 1;
+	console.log(page_num);
+	changeAudio(page_num);
     if (page_num % 2 === 0) {
       page.removeClass('flipped');
       page.prev().removeClass('flipped');
