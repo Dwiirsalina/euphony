@@ -103,7 +103,31 @@ $(document).ready(function() {
 			
 	});
 	
-	
+	$("#rain").click(function() {
+		var cat = $("#rain").val();
+		var randNumber = Math.floor((Math.random() * 5) + 1);
+		var music = cat + randNumber + '.mp3';
+		console.log(music);
+		changeAudio(music);
+			
+	});
+
+	$("#cafeteria").click(function() {
+		var cat = $("cafeteria").val();
+		var randNumber = Math.floor((Math.random() * 2) + 1);
+		var music = cat + randNumber + '.mp3';
+		console.log(music);
+		changeAudio(music);
+			
+	});
+	$("#bird").click(function() {
+		var cat = $("bird").val();
+		var randNumber = Math.floor((Math.random() * 1) + 1);
+		var music = cat + randNumber + '.mp3';
+		console.log(music);
+		changeAudio(music);
+			
+	});
 });
 	
 	
